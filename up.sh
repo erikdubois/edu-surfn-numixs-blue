@@ -98,22 +98,15 @@ clean_pycache() {
 
 git_pull() {
     log_section "Git pull"
-    git -C "${PROJECT_DIR}" pull --rebase --autostash || log_warn "Git pull failed — continuing with local state"
+    git -C "${PROJECT_DIR}" pull || log_warn "Git pull failed — continuing with local state"
 }
 
 ensure_git_remote_configured() {
     local remote_url
-<<<<<<< Updated upstream
-    remote_url="$(git -C "${SCRIPT_DIR}" remote get-url origin 2>/dev/null || true)"
-    if [[ "${remote_url}" != git@github.com* ]]; then
-        log_section "Git remote not SSH — running setup.sh first"
-        bash "${SCRIPT_DIR}/setup.sh"
-=======
     remote_url="$(git -C "${PROJECT_DIR}" remote get-url origin 2>/dev/null || true)"
     if [[ "${remote_url}" != *"github.com"* ]]; then
         log_section "Git remote not configured — running setup.sh first"
         bash "${PROJECT_DIR}/setup.sh"
->>>>>>> Stashed changes
     fi
 }
 
