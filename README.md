@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="kiro.jpg" alt="Kiro" width="220" />
+</p>
+
 # edu-surfn-numixs-blue
 
 Blue variant of the **Surfn Numixs** icon theme — a Numix-derived icon set with Surfn-style folder icons. Part of the `~/EDU/` icon-theme series.
